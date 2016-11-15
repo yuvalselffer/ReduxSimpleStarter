@@ -1,5 +1,7 @@
 module.exports = {
   entry: [
+    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   output: {
@@ -10,10 +12,7 @@ module.exports = {
   module: {
     loaders: [{
       exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
-      }
+      loaders: ['babel-loader']
     }]
   },
   resolve: {
