@@ -12,8 +12,9 @@ class App extends Component {
           </div>
         </Menu>
 
+        <Header />
+        
         <div className="container-fluid">
-          <Header />
           {this.props.children}
         </div>
       </div>

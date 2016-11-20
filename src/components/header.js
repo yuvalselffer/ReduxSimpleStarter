@@ -9,14 +9,13 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        <button
-          className="btn btn-default"
-          onClick={this.toggleSidebar}
-        >
-          Menu
-        </button>
-      </div>
+      <header className="container-fluid">
+        <div className="burger">
+          <a onClick={this.toggleSidebar}>
+            <span className="fa fa-bars fa-2x" />
+          </a>
+        </div>
+      </header>
     );
   }
 }
