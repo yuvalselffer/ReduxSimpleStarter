@@ -1,4 +1,19 @@
-import { slide as Menu } from 'react-burger-menu';
-import { decorator as reduxBurgerMenu } from 'redux-burger-menu';
+import React, { Component } from 'react';
+import ConnectSlider from './connect_slider';
+import BurgerMenu from './burger_menu';
 
-export default reduxBurgerMenu(Menu);
+
+class Menu extends Component {
+  render() {
+    return (
+      <BurgerMenu customBurgerIcon={false}>
+        <div>
+          <a href="#test">Menu Item 1</a>
+          <ConnectSlider />
+        </div>
+      </BurgerMenu>
+    );
+  }
+}
+
+export default Menu;

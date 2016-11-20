@@ -6,14 +6,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Menu customBurgerIcon={false}>
-          <div>
-            <a href="#test">Menu Item 1</a>
-          </div>
-        </Menu>
-
-        <Header />
+        <Menu />
         
+        <Header />
+
         <div className="container-fluid">
           {this.props.children}
         </div>

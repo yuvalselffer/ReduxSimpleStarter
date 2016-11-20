@@ -69,3 +69,80 @@ header .headerMain {
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
+
+/* React Slider Defaults */
+.horizontal-slider {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+}
+.handle {
+    font-size: 0.9em;
+    text-align: center;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+}
+.handle.active {
+    background-color: white;
+}
+.bar {
+    position: relative;
+    background: #ddd;
+}
+.bar.bar-1 {
+    background: #f00;
+}
+.bar.bar-2 {
+    background: #0f0;
+}
+.horizontal-slider .bar {
+    top: 20px;
+    height: 10px;
+}
+.horizontal-slider .handle {
+  width: 49px;
+  height: 49px;
+  border-radius: 50px;
+}
+#horizontal-0,
+#horizontal-1, #horizontal-2, #horizontal-3 {
+    margin: 20px 10px;
+}
+#horizontal-2 .bar.bar-2 {
+    background: #ddd;
+}
+
+/* Slider Background */
+.connect-slider {
+  position: relative;
+  text-align: center;
+}
+
+.connect-slider .slider-background {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+
+.connect-slider .slider-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: solid 1px white;
+  border-radius: 50px;
+}
+
+.connect-slider-handle {
+  color: #373a47;
+  border: solid 4px #373a47;
+  line-height: 46px;
+  border-radius: 50px;
+  height: 50px;
+}
