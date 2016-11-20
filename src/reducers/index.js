@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
+import { reducer as burgerMenu } from 'redux-burger-menu';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  burgerMenu
 });
 
 export default rootReducer;
