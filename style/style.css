@@ -105,6 +105,7 @@ header .headerMain {
   width: 49px;
   height: 49px;
   border-radius: 50px;
+  background-color: #373a47;
 }
 #horizontal-0,
 #horizontal-1, #horizontal-2, #horizontal-3 {
@@ -123,6 +124,7 @@ header .headerMain {
 .connect-slider .slider-background {
   font-size: 14px;
   font-weight: bold;
+  color: #fff;
   position: absolute;
   top: 0;
   left: 0;
@@ -141,6 +143,7 @@ header .headerMain {
 
 .connect-slider-handle {
   color: #373a47;
+  background-color: #fff;
   border: solid 4px #373a47;
   line-height: 46px;
   border-radius: 50px;
