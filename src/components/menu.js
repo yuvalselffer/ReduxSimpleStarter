@@ -1,29 +1,42 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import ConnectSlider from './connect_slider';
 import BurgerMenu from './burger_menu';
 
 class Menu extends Component {
-  responseFacebook(response) {
-    console.log(response);
+  renderLoginLogout() {
+    if (this.props.facebookUser.id) {
+      return (
+        <div>Logged In as {this.props.facebookUser.name}</div>
+      );
+    }
+
+    return (
+      <ConnectSlider
+        socialId="1657832644469954"
+        language="en_US"
+        scope="public_profile,email"
+        xfbml
+        version="v2.8"
+      />
+    );
   }
 
   render() {
     return (
       <BurgerMenu customBurgerIcon={false}>
         <div>
-          <a href="#test">Menu Item 1</a>
-          <ConnectSlider
-            socialId="1657832644469954"
-            language="en_US"
-            scope="public_profile,email"
-            responseHandler={this.responseFacebook}
-            xfbml
-            version="v2.8"
-          />
+          {this.renderLoginLogout()}
         </div>
       </BurgerMenu>
     );
   }
 }
 
-export default Menu;
+const mapStateToProps = ({ facebookUser }) => {
+  return {
+    facebookUser
+  };
+};
+
+export default connect(mapStateToProps)(Menu);

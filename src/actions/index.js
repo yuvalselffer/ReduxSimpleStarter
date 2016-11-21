@@ -1,7 +1,8 @@
-export const FB_LOGIN_START = 'FB_LOGIN_START';
+export const FB_LOGIN_SUCCESS = 'FB_LOGIN_SUCCESS';
 
-export const fbLogin = () => {
+export const facebookLoginSuccess = (user) => {
   return {
-    type: FB_LOGIN_START
+    type: FB_LOGIN_SUCCESS,
+    payload: user
   };
 };

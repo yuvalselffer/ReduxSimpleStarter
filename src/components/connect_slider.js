@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Slider from 'react-slider';
+import { facebookLoginSuccess } from '../actions';
 
 const SLIDER_MIN = 0;
 const SLIDER_MAX = 100;
 
 class ConnectSlider extends Component {
-   componentDidMount() {
+  componentDidMount() {
     (function (d, s, id) {
       const element = d.getElementsByTagName(s)[0];
       const fjs = element;
@@ -29,17 +31,13 @@ class ConnectSlider extends Component {
   responseApi(authResponse) {
     FB.api('/me', { fields: this.props.fields }, (me) => {
       me.accessToken = authResponse.accessToken;
-      this.props.responseHandler(me);
+      this.props.facebookLoginSuccess(me);
     });
   }
 
   checkLoginState(response) {
     if (response.authResponse) {
       this.responseApi(response.authResponse);
-    } else {
-      if (this.props.responseHandler) {
-        this.props.responseHandler({ status: response.status });
-      }
     }
   }
 
@@ -73,4 +71,4 @@ class ConnectSlider extends Component {
   }
 }
 
-export default ConnectSlider;
+export default connect(null, { facebookLoginSuccess })(ConnectSlider);
